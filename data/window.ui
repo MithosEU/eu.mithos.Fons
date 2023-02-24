@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+
+<menu	id="menuBarModel">
+	<submenu>
+		<attribute name="label">Dokumente</attribute>
+		<section>
+			<item>
+				<attribute name="label">Öffnen</attribute>
+				<attribute name="action">app.doit</attribute>
+			</item>
+			<item>
+				<attribute name="label">Beenden</attribute>
+				<attribute name="action">app.quit</attribute>
+			</item>
+		</section>
+	</submenu>
+	<submenu>
+		<attribute name="label">Bearbeiten</attribute>
+	</submenu>
+	<submenu>
+		<attribute name="label">Einfügen</attribute>
+	</submenu>
+	<submenu>
+		<attribute name="label">Hilfe</attribute>
+	</submenu>
+</menu>
+
+<object id="mainWindow" class="GtkApplicationWindow">
+	<property name="title">eu.mithos.Fons</property>
+	<property name="default-width">600</property>
+	<property name="default-height">350</property>
+	<property name="decorated">false</property>
+	<child>
+		<object class="GtkBox">
+			<property name="orientation">horizontal</property>
+			<child>
+				<object class="GtkBox">
+					<property name="orientation">vertical</property>
+					<property name="vexpand">true</property>
+					<property name="hexpand">false</property>
+					<property name="margin-top">15</property>
+					<property name="margin-bottom">15</property>
+					<property name="margin-start">15</property>
+					<property name="margin-end">15</property>
+					<property name="spacing">5</property>
+					<property name="width-request">300</property>
+					<child>
+						<object class="GtkLabel">
+							<property name="label">Format</property>
+							<property name="halign">start</property>
+							<property name="valign">start</property>
+							<style>
+								<class name="btext" />
+							</style>
+						</object>
+					</child>
+					<child>
+						<object class="GtkBox">
+							<property name="orientation">horizontal</property>
+							<property name="margin-start">15</property>
+							<property name="spacing">15</property>
+							<property name="hexpand">false</property>
+							<property name="vexpand">false</property>
+							<child>
+								<object class="GtkLabel">
+									<property name="label">Stil</property>
+									<property name="halign">start</property>
+								</object>
+							</child>
+							<child>
+								<object class="GtkComboBoxText">
+									<property name="has-entry">true</property>
+									<property name="active-id">1</property>
+									<items>
+										<item id="1">Fließtext</item>
+										<item id="2">Überschrift</item>
+										<item id="3">Unterüberschrift</item>
+									</items>
+								</object>
+							</child>
+						</object>
+					</child>
+					<child>
+						<object class="GtkLabel">
+							<property name="label">Zeichen</property>
+							<property name="halign">start</property>
+							<property name="valign">start</property>
+							<style>
+								<class name="btext" />
+							</style>
+						</object>
+					</child>
+				</object>
+			</child>
+			<child>
+				<object class="GtkSeparator"></object>
+			</child>
+			<child>
+				<object id="tabStack" class="GtkStack">
+					<property name="hexpand">true</property>
+					<property name="vexpand">true</property>
+				</object>
+			</child>
+		</object>
+	</child>
+</object>
+	
+</interface>
