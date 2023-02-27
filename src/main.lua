@@ -1,6 +1,6 @@
 #!/usr/bin/env lua
 path = debug.getinfo(1).source:match("@?(.*/)"):sub(1, -5)
-package.path = "./" .. path .. "lib/eu.mithos.Fons/?.lua;" .. package.path
+package.path = path .. "lib/eu.mithos.Fons/?.lua;" .. path .. "lib/eu.mithos.Fons/?.lua;" .. package.path
 
 local lgi = require("lgi")
 local Gtk = lgi.require("Gtk", "4.0")
