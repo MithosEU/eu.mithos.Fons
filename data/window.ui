@@ -35,15 +35,16 @@
 		<object class="GtkBox">
 			<property name="orientation">horizontal</property>
 			<child>
-				<object class="GtkBox">
-					<property name="orientation">vertical</property>
+				<object class="GtkGrid">
 					<property name="vexpand">true</property>
 					<property name="hexpand">false</property>
 					<property name="margin-top">15</property>
 					<property name="margin-bottom">15</property>
 					<property name="margin-start">15</property>
 					<property name="margin-end">15</property>
-					<property name="spacing">5</property>
+					<property name="column-spacing">5</property>
+					<property name="column-homogeneous">true</property>
+					<property name="row-spacing">5</property>
 					<property name="width-request">300</property>
 					<child>
 						<object class="GtkLabel">
@@ -53,15 +54,16 @@
 							<style>
 								<class name="btext" />
 							</style>
+							<layout>
+								<property name="column">0</property>
+								<property name="column-span">3</property>
+								<property name="row">0</property>
+							</layout>
 						</object>
 					</child>
 					<child>
 						<object class="GtkBox">
-							<property name="orientation">horizontal</property>
-							<property name="margin-start">15</property>
-							<property name="spacing">15</property>
-							<property name="hexpand">false</property>
-							<property name="vexpand">false</property>
+							<property name="spacing">5</property>
 							<child>
 								<object class="GtkLabel">
 									<property name="label">Stil</property>
@@ -71,7 +73,7 @@
 							<child>
 								<object class="GtkComboBoxText">
 									<property name="has-entry">true</property>
-									<property name="active-id">1</property>
+									<property name="active-id">"1"</property>
 									<items>
 										<item id="1">Fließtext</item>
 										<item id="2">Überschrift</item>
@@ -79,6 +81,62 @@
 									</items>
 								</object>
 							</child>
+							<layout>
+								<property name="column">0</property>
+								<property name="column-span">3</property>
+								<property name="row">1</property>
+							 </layout>
+						</object>
+					</child>
+					<child>
+						<object class="GtkLabel">
+							<property name="label">Ausrichtung</property>
+							<property name="halign">start</property>
+							<property name="margin-top">10</property>
+							<style>
+								<class name="btext" />
+							</style>
+							<layout>
+								<property name="column">0</property>
+								<property name="column-span">3</property>
+								<property name="row">2</property>
+							</layout>
+						</object>
+					</child>
+					<child>
+						<object class="GtkCheckButton">
+							<property name="label">Links</property>
+							<property name="action-name">app.charstyle</property>
+							<property name="action-target">"l"</property>
+							<layout>
+								<property name="column">0</property>
+								<property name="column-span">1</property>
+								<property name="row">3</property>
+							</layout>
+						</object>
+					</child>
+					<child>
+						<object class="GtkCheckButton">
+							<property name="label">Mittig</property>
+							<property name="action-name">app.charstyle</property>
+							<property name="action-target">"m"</property>
+							<layout>
+								<property name="column">1</property>
+								<property name="column-span">1</property>
+								<property name="row">3</property>
+							</layout>
+						</object>
+					</child>
+					<child>
+						<object class="GtkCheckButton">
+							<property name="label">Rechts</property>
+							<property name="action-name">app.charstyle</property>
+							<property name="action-target">"r"</property>
+							<layout>
+								<property name="column">2</property>
+								<property name="column-span">1</property>
+								<property name="row">3</property>
+							</layout>
 						</object>
 					</child>
 					<child>
@@ -86,9 +144,15 @@
 							<property name="label">Zeichen</property>
 							<property name="halign">start</property>
 							<property name="valign">start</property>
+							<property name="margin-top">10</property>
 							<style>
 								<class name="btext" />
 							</style>
+							<layout>
+								<property name="column">0</property>
+								<property name="column-span">3</property>
+								<property name="row">5</property>
+							</layout>
 						</object>
 					</child>
 				</object>

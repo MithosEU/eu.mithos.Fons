@@ -26,6 +26,10 @@ function App:on_startup()
   local rtv1 = test_rtview()
   local tabStack = Builder:get_object("tabStack")
   tabStack:add_child(rtv1)
+  
+  --action test
+  local a1 = lgi.Gio.SimpleAction.new_stateful("charstyle", lgi.GLib.VariantType.STRING, lgi.GLib.Variant("s", "l"))
+  App:add_action(a1)
 end
 
 function App:on_activate()
